@@ -1,9 +1,0 @@
-[build]
-command = "bun run build"
-publish = ".output/public"
-
-[[redirects]]
-from = "/api/*"
-to = "/.netlify/functions/__render"
-status = 200
-force = true

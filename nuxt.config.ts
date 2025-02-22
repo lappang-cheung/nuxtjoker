@@ -8,6 +8,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
   ],
   nitro: {
-    preset: "netlify",
+    preset: "vercel",
   },
 })
