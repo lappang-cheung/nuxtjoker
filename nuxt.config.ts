@@ -6,5 +6,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@nuxt/eslint',
-  ]
+  ],
+  nitro: {
+    preset: "netlify",
+  },
 })
