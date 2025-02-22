@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "joker-nuxt-graphql-tailwindcss-pinia",
   "private": true,
   "type": "module",
   "scripts": {
