@@ -1,15 +1,17 @@
 <script setup>
+import { onMounted } from 'vue'
 import { useUserStore } from '@/stores/userStore'
 import { storeToRefs } from 'pinia'
 
 // Initialize store
 const userStore = useUserStore()
-
-// Fetch users when the page loads
-await userStore.fetchUsers()
-
 // Make state reactive
 const { users, loading, error } = storeToRefs(userStore)
+
+onMounted(async () => {
+// Fetch users when the page loads
+  await userStore.fetchUsers()
+})
 </script>
 
 <template>
