@@ -10,4 +10,9 @@ export default defineNuxtConfig({
   nitro: {
     preset: "vercel",
   },
+  runtimeConfig: {
+    public: {
+      graphqlEndpoint: process.env.NUXT_PUBLIC_GRAPHQL_ENDPOINT || "http://localhost:3000/api/graphql",
+    },
+  },
 })
