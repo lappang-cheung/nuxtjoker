@@ -35,7 +35,7 @@ export const useImageStore = defineStore("imageStore", {
 					this.errorImg = "GraphQL client is not available."
 				} else {
 					// Explicitly type the response here
-					const response = await $graphql.request<{ images: Image[] }>(query, { folder: "joker/darkKnight" })
+					const response = await $graphql.request<{ images: Image[] }>(query, { folder: "joker" })
 					this.images = response.images
 				}
 
