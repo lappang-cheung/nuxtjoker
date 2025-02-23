@@ -12,7 +12,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      graphqlEndpoint: process.env.NUXT_PUBLIC_GRAPHQL_ENDPOINT || "http://localhost:3000/api/graphql",
+      graphqlEndpoint: process.env.NUXT_PUBLIC_GRAPHQL_ENDPOINT ||
+        (process.env.VERCEL_URL
+          ? `https://${process.env.VERCEL_URL}/api/graphql`
+          : "http://localhost:3000/api/graphql"),
     },
   },
 })
