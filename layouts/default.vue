@@ -4,13 +4,18 @@ import Navbar from '@/components/Navbar/index.vue'
 
 <template>
   <div class="baseLayout">
-    <navbar />
-    <slot />
+    <div class="baseLayout-content">
+      <navbar />
+      <slot />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .baseLayout {
-  @apply mx-auto container w-full h-full;
+  @apply bg-black w-full h-full;
+  &-content {
+    @apply mx-auto container w-full h-full;
+  }
 }
 </style>

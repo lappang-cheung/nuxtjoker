@@ -1,22 +1,14 @@
 import { createSchema, createYoga } from 'graphql-yoga'
 import { defineEventHandler } from 'h3'
-import { getUsers } from '@/server/services/userService'
 
 // Define GraphQL schema
-const typeDefs = `
-  type User {
-    id: ID!
-    name: String!
-    email: String!
-  }
-  
+const typeDefs = `  
   type Image {
     url: String!
     public_id: String!
   }
 
   type Query {
-    users: [User!]!,
     images(folder: String!): [Image!]!
   }
 `
@@ -24,7 +16,6 @@ const typeDefs = `
 // Define resolvers
 const resolvers = {
 	Query: {
-		users: () => getUsers(),
 		images: async (_: any, { folder }: { folder: string }) => {
 			try {
 				const result = await cloudinary.api.resources({

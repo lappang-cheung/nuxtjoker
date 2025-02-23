@@ -10,7 +10,7 @@ const toggleMenu = () => {
 
 <template>
   <nav class="navbar">
-    <div>
+    <div class="text-4xl font-bold">
       Joker
     </div>
     <div class="relative">
@@ -18,13 +18,13 @@ const toggleMenu = () => {
         class="z-50 gap-1.5 w-10 h-10 relative flex flex-col items-center justify-center"
         @click="toggleMenu">
         <span
-          class="block h-1 w-8 bg-black rounded transition-transform duration-300"
+          class="block h-1 w-8 bg-white rounded transition-transform duration-300"
           :class="{ 'rotate-45 translate-y-3': menuToggle }" />
         <span
-          class="block h-1 w-8 bg-black rounded transition-opacity duration-300"
+          class="block h-1 w-8 bg-white rounded transition-opacity duration-300"
           :class="{ 'opacity-0': menuToggle }" />
         <span
-          class="block h-1 w-8 bg-black rounded transition-transform duration-300"
+          class="block h-1 w-8 bg-white rounded transition-transform duration-300"
           :class="{ '-rotate-45 -translate-y-2': menuToggle }" />
       </button>
       <transition
@@ -36,7 +36,7 @@ const toggleMenu = () => {
           leave-to-class="translate-x-full" >
         <aside
             v-if="menuToggle"
-            class="fixed top-0 right-0 h-full bg-white shadow-lg p-6 flex flex-col items-center justify-center space-y-4 w-full">
+            class="fixed top-0 right-0 h-full bg-black/[.8] shadow-lg p-6 flex flex-col items-center justify-center space-y-4 w-full">
           <a href="#" class="text-lg font-semibold">Home</a>
           <a href="#" class="text-lg font-semibold">About</a>
           <a href="#" class="text-lg font-semibold">Services</a>
@@ -49,6 +49,6 @@ const toggleMenu = () => {
 
 <style lang="scss" scoped>
 .navbar {
-  @apply w-full flex flex-row justify-between py-4 px-4 md:px-0 items-center;
+  @apply w-full flex flex-row justify-between py-4 px-4 md:px-0 items-center top-0 sticky z-10 text-white;
 }
 </style>
