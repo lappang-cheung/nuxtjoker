@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <p>buttons</p>
+  <p>Loading...</p>
 </template>
 
 <style lang="scss" scoped>
